@@ -1,0 +1,13 @@
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\bin\Debug\QuanLyDoanVien.exe.config
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\bin\Debug\QuanLyDoanVien.exe
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\bin\Debug\QuanLyDoanVien.pdb
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.DangNhap.resources
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.Properties.Resources.resources
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.exe
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.pdb
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.HeThong.resources
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.DoanVien.resources
