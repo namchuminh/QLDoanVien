@@ -47,5 +47,10 @@ namespace QuanLyDoanVien
         {
             loadform(new ChiDoan());
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            loadform(new XepLoai());
+        }
     }
 }

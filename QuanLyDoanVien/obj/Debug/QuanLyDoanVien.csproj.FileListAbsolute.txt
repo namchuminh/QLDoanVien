@@ -12,3 +12,4 @@ C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoa
 C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.HeThong.resources
 C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.DoanVien.resources
 C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.ChiDoan.resources
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.XepLoai.resources
