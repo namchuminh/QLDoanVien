@@ -15,6 +15,7 @@ namespace QuanLyDoanVien
         public HeThong()
         {
             InitializeComponent();
+            loadform(new DoanVien());
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -40,6 +41,11 @@ namespace QuanLyDoanVien
         private void button1_Click(object sender, EventArgs e)
         {
             loadform(new DoanVien());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            loadform(new ChiDoan());
         }
     }
 }

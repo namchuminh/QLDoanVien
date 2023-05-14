@@ -11,3 +11,4 @@ C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoa
 C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.pdb
 C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.HeThong.resources
 C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.DoanVien.resources
+C:\Users\Administrator\Desktop\QuanLyDoanVien\QuanLyDoanVien\obj\Debug\QuanLyDoanVien.ChiDoan.resources

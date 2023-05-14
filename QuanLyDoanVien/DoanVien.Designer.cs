@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbChiDoan = new System.Windows.Forms.ComboBox();
@@ -50,8 +50,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvDoanVien = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.imgDoanVien = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -60,12 +58,14 @@
             this.cbChiDoan2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.imgDoanVien = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanVien)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgDoanVien)).BeginInit();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -87,6 +87,7 @@
             this.groupBox1.Controls.Add(this.txtTenDoanVien);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtMaDoanVien);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(396, 225);
@@ -109,7 +110,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(214, 160);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Chi Đoàn:";
             // 
@@ -131,7 +132,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(39, 160);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.Size = new System.Drawing.Size(59, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Chức Vụ:";
             // 
@@ -140,7 +141,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(214, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.Size = new System.Drawing.Size(106, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Ngày Vào Đoàn:";
             // 
@@ -157,7 +158,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(39, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Ngày Sinh:";
             // 
@@ -174,7 +175,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(214, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(99, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên Đoàn Viên:";
             // 
@@ -191,7 +192,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(36, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
+            this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã Đoàn Viên:";
             // 
@@ -270,36 +271,18 @@
             this.dgvDoanVien.Location = new System.Drawing.Point(3, 288);
             this.dgvDoanVien.Name = "dgvDoanVien";
             this.dgvDoanVien.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDoanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDoanVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDoanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDoanVien.Size = new System.Drawing.Size(993, 284);
             this.dgvDoanVien.TabIndex = 4;
             this.dgvDoanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoanVien_CellContentClick);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.imgDoanVien);
-            this.groupBox3.Location = new System.Drawing.Point(808, 1);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(188, 225);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            // 
-            // imgDoanVien
-            // 
-            this.imgDoanVien.Location = new System.Drawing.Point(6, 11);
-            this.imgDoanVien.Name = "imgDoanVien";
-            this.imgDoanVien.Size = new System.Drawing.Size(176, 208);
-            this.imgDoanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgDoanVien.TabIndex = 0;
-            this.imgDoanVien.TabStop = false;
             // 
             // groupBox4
             // 
@@ -309,6 +292,7 @@
             this.groupBox4.Controls.Add(this.txtTenDoanVien2);
             this.groupBox4.Controls.Add(this.cbChiDoan2);
             this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(406, 1);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(396, 225);
@@ -343,7 +327,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(24, 94);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.Size = new System.Drawing.Size(99, 16);
             this.label8.TabIndex = 16;
             this.label8.Text = "Tên Đoàn Viên:";
             // 
@@ -370,9 +354,27 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(21, 28);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "Chi Đoàn:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.imgDoanVien);
+            this.groupBox3.Location = new System.Drawing.Point(808, 1);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(188, 225);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            // 
+            // imgDoanVien
+            // 
+            this.imgDoanVien.Location = new System.Drawing.Point(6, 11);
+            this.imgDoanVien.Name = "imgDoanVien";
+            this.imgDoanVien.Size = new System.Drawing.Size(176, 208);
+            this.imgDoanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgDoanVien.TabIndex = 0;
+            this.imgDoanVien.TabStop = false;
             // 
             // DoanVien
             // 
@@ -391,10 +393,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanVien)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgDoanVien)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgDoanVien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,11 +406,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvDoanVien;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox cbChiDoan;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbChucVu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNgayVaoDoan;
@@ -418,17 +416,21 @@
         private System.Windows.Forms.TextBox txtTenDoanVien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaDoanVien;
-        private System.Windows.Forms.Button btnChonAnh;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTenDoanVien2;
-        private System.Windows.Forms.ComboBox cbChiDoan2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.ComboBox cbChiDoan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbChucVu;
+        private System.Windows.Forms.Button btnChonAnh;
+        private System.Windows.Forms.ComboBox cbChiDoan2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox imgDoanVien;
     }
 }

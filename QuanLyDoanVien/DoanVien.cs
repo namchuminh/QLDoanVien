@@ -112,7 +112,7 @@ namespace QuanLyDoanVien
                 int result = (int)cmd.ExecuteScalar();
                 conn.Close();
                 return result;
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 return -1;
             }
@@ -182,6 +182,7 @@ namespace QuanLyDoanVien
                         MessageBox.Show($"Vui Lòng Thêm Ảnh Cho Đoàn Viên: {txtTenDoanVien.Text}", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mdvImage = txtMaDoanVien.Text;
                         getData();
+                        resetTxt();
                     }
                     else
                     {
@@ -251,7 +252,7 @@ namespace QuanLyDoanVien
             int rowindex = dgvDoanVien.CurrentCell.RowIndex;
             txtMaDoanVien.Text = dgvDoanVien.Rows[rowindex].Cells[0].Value.ToString();
             txtTenDoanVien.Text = dgvDoanVien.Rows[rowindex].Cells[1].Value.ToString();
-            txtNgaySinh.Text = dgvDoanVien.Rows[rowindex].Cells[2].Value.ToString().Split(' ')[0].ToString();
+            txtNgaySinh.Text = dgvDoanVien.Rows[rowindex].Cells[2].Value.ToString();
             txtNgayVaoDoan.Text = dgvDoanVien.Rows[rowindex].Cells[3].Value.ToString();
             cbChucVu.Text = dgvDoanVien.Rows[rowindex].Cells[4].Value.ToString();
             cbChiDoan.Text = dgvDoanVien.Rows[rowindex].Cells[5].Value.ToString();
@@ -334,18 +335,61 @@ namespace QuanLyDoanVien
             enabledButton();
             getData();
             resetTxt();
+
+            if (imgDoanVien.Image != null)
+            {
+                imgDoanVien.Image.Dispose();
+                imgDoanVien.Image = null;
+            }
         }
+
+        void searchData(string ChiDoan, string TenDoanVien)
+        {
+            try
+            {
+                List<doanvien> lstDoanVien = new List<doanvien>();
+                conn.Open();
+                query = $"SELECT * FROM DoanVien WHERE TenDoanVien LIKE N'%{TenDoanVien}%' AND ChiDoan = N'{ChiDoan}'";
+                cmd = new SqlCommand(query, conn);
+                data = cmd.ExecuteReader();
+                while (data.Read())
+                {
+                    doanvien doanvien = new doanvien();
+                    doanvien.MaDoanVien = (string)data["MaDoanVien"];
+                    doanvien.TenDoanVien = (string)data["TenDoanVien"];
+                    doanvien.NgaySinh = (string)data["NgaySinh"];
+                    doanvien.NgayVaoDoan = (string)data["NgayVaoDoan"];
+                    doanvien.ChucVu = (string)data["ChucVu"];
+                    doanvien.ChiDoan = (string)data["ChiDoan"];
+                    lstDoanVien.Add(doanvien);
+                }
+                dgvDoanVien.DataSource = lstDoanVien;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (txtMaDoanVien.Text == "")
+            if (txtMaDoanVien.Text == "" || txtTenDoanVien.Text == "" || txtNgaySinh.Text == "" || txtNgayVaoDoan.Text == "")
             {
-                MessageBox.Show("Vui Nhập Chọn Đoàn Viên Cần Sửa Thông Tin!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui Nhập Đủ Thông Tin Đoàn Viên!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (txtTenDoanVien.Text == "" || txtNgaySinh.Text == "" || txtNgayVaoDoan.Text == "" || cbChucVu.Text == "" || cbChiDoan.Text == "")
+
+            if (cbChiDoan.Text == "")
             {
-                MessageBox.Show("Vui Nhập Đủ Thông Tin Cập Nhật!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui Lòng Chọn Chi Đoàn!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (cbChucVu.Text == "")
+            {
+                MessageBox.Show("Vui Lòng Chọn Chức Vụ!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -379,7 +423,6 @@ namespace QuanLyDoanVien
                 {
                     MessageBox.Show("Thành Công!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     getData();
-                    resetTxt();
                 }
                 else
                 {
@@ -392,53 +435,23 @@ namespace QuanLyDoanVien
             }
         }
 
-        void searchData(string ChiDoan, string TenDoanVien)
-        {
-            try
-            {
-                List<doanvien> lstDoanVien = new List<doanvien>();
-                conn.Open();
-                query = $"SELECT * FROM DoanVien WHERE TenDoanVien LIKE '%{TenDoanVien}%' AND ChiDoan = N'{ChiDoan}'";
-                cmd = new SqlCommand(query, conn);
-                data = cmd.ExecuteReader();
-                while (data.Read())
-                {
-                    doanvien doanvien = new doanvien();
-                    doanvien.MaDoanVien = (string)data["MaDoanVien"];
-                    doanvien.TenDoanVien = (string)data["TenDoanVien"];
-                    doanvien.NgaySinh = (string)data["NgaySinh"];
-                    doanvien.NgayVaoDoan = (string)data["NgayVaoDoan"];
-                    doanvien.ChucVu = (string)data["ChucVu"];
-                    doanvien.ChiDoan = (string)data["ChiDoan"];
-                    lstDoanVien.Add(doanvien);
-                }
-                dgvDoanVien.DataSource = lstDoanVien;
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
             if (txtTenDoanVien2.Text == "" && cbChiDoan2.Text == "")
             {
-                MessageBox.Show("Vui Lòng Chọn Chi Đoàn Và Tên Của Đoàn Viên Cần Tìm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            if (cbChiDoan2.Text == "")
-            {
-                MessageBox.Show("Vui Lòng Chọn Chi Đoàn Cần Tìm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui Nhập Đủ Thông Tin Tìm Kiếm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             if (txtTenDoanVien2.Text == "")
             {
-                MessageBox.Show("Vui Lòng Chọn Tên Đoàn Viên Cần Tìm!", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui Nhập Tên Đoàn Viên", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (cbChiDoan2.Text == "")
+            {
+                MessageBox.Show("Vui Chọn Tên Chi Đoàn", "Thông Báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
